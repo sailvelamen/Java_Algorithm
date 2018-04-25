@@ -1,0 +1,13 @@
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+  
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("输入两个数：");
+		int a = input.nextInt(),b = input.nextInt(),sum;
+		sum = a + b;
+		System.out.println(sum);
+	}
+}
