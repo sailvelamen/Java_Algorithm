@@ -1,0 +1,26 @@
+public class Main{
+  public static void main(String[] args){
+  
+  final String PASSWORD = "135246";//常量只能定义一次
+		Scanner input = new Scanner(System.in);
+		String password = null;	//或String userName = "";
+		int i = 0;
+		while(i < 3) {
+			System.out.println("请输入密码：");
+			password = input.next();
+			i++;
+//			if(password == "135246") {}	//Java当中不允许这种方法来判断
+//			if(password.equals("135246")) {}	//判断字符串是否相等
+			if(!PASSWORD.equals(password)) {	//专业的写法
+				System.out.println("密码输入错误，请重新输入！（剩余" +(3 - i)+"次）");
+				if(i == 3) {
+					System.out.println("密码输入错误已达三次，强制退出系统！");
+					System.exit(0);	//正常退出
+				}	
+			}else {
+				i = Integer.MAX_VALUE;
+			}
+		}
+		System.out.println("密码正确");
+  }
+}
