@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Test {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("计算1到n的和。");
+		int n;
+		do {
+			System.out.print("n的值：");
+			n = input.nextInt();
+		}while(n <= 0);
+		
+		int sum = 0;
+		int i = 0;
+		while(i <= n){
+			sum += i++;
+		}
+		System.out.println("1到" + n + "的和是" + sum + "。");
+    }
+}
