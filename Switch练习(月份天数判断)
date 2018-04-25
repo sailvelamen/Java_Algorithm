@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class Test {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		
+		int year = -1, month = -1, day = -1; //初值给一个不可能的值以便后面判断
+		
+		System.out.println("输入年份:");
+		year = input.nextInt();
+		System.out.println("输入月份:");
+		month = input.nextInt();
+		
+		switch (month) {
+		case 1:
+		case 3:
+		case 5:
+		case 7:
+		case 8:
+		case 10:
+		case 12:
+			day = 31;
+			break;
+		case 4:
+		case 6:
+		case 9:
+		case 11:
+			day = 30;
+			break;
+		case 2:
+			day = 28;
+			break;
+		default:
+			System.err.println("输入有误！！！");
+			System.exit(0);
+			break;
+		}
+		
+		boolean isleapyear = year % 4 == 0 && year % 100 != 0 || year % 400 == 0;//判断闰年
+			//如果变量是布尔类型，一般在变量前加上is
+		if (isleapyear) {
+			day++;
+		}
+		System.out.println(year + "年" + month + "月有" + day + "天");
+	}
+}
