@@ -1,0 +1,38 @@
+import java.util.Scanner;
+public class Test {
+
+	public static void main(String[] args) {
+		
+		Scanner input = new Scanner(System.in);
+		System.out.println("请输入钱数:");
+		double money = input.nextDouble();
+		
+		int hundred = (int)money / 100;
+		System.out.println("一百元纸币：" + hundred + "张;");
+		
+		int fifty = (int)money % 100 / 50;
+		System.out.println("五十元纸币：" + fifty + "张；");
+		
+		int twenty = (int)money % 100 % 50 / 20;
+		System.out.println("二十元纸币：" + twenty + "张；");
+		
+		int ten = (int)money % 100 % 50 % 20 / 10;
+		System.out.println("    十元纸币：" + ten + "张；");
+		
+		int five = (int)money % 100 % 10 / 5;
+		System.out.println("    五元纸币：" + five + "张；");
+		
+		int one = (int)money % 100 % 10 % 5 / 1;
+		System.out.println("一块钱硬币：" + one + "个；");
+		
+		int fivecorner = (int)(money * 10) % 100 % 10 / 5;
+		System.out.println("五角钱硬币：" + fivecorner + "个；");
+		
+		int corner = (int)(money * 10) % 100 % 10 % 5 / 1;
+		System.out.println("一角钱硬币：" + corner + "个；");
+		
+		int cent = (int)(money * 100) % 100  % 10 / 1;
+		System.out.println("一分钱硬币：" + cent + "个；");
+	}
+
+}
