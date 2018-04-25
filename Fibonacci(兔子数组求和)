@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args){
+		
+		Scanner input = new Scanner(System.in);
+		System.out.println("输入数字：");
+		int N = input.nextInt(),sum = 0,a = 0,i;
+		int[] nums = new int[N];
+		nums[0] = 1;
+		nums[1] = 1;
+		for( i = 2;i < nums.length;i++){
+			nums[i] = nums[i-1] + nums[i-2];
+		}
+		System.out.println("打印结果");
+		for( i = 0; i < N; i++){
+			sum += nums[i];
+		}
+		a = (sum - (nums[i-1] + nums[i-2])+1)%10007;
+		System.out.println(a);
+	}
+}
