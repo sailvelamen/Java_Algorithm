@@ -1,0 +1,82 @@
+import java.util.Scanner;
+public class Test {
+
+	public static void main(String[] args) {
+		
+		float price;	//商品单价
+		int count;	//商品数量
+		double total;	//购买商品的总价
+		
+		Scanner input = new Scanner(System.in);
+		
+		System.out.print("请输入路易斯威登中号手表的单价：");
+		price = input.nextFloat();	//接受用户输入的单价数字
+		System.out.print("请输入商品的数量: ");
+		count = input.nextInt();
+		total = price * count;	//计算总价
+		
+		System.out.print("请输入爱马仕时尚休闲皮带的单价: ");
+		price = input.nextFloat();
+		System.out.print("请输入商品的数量: ");
+		count = input.nextInt();
+		total += price * count;	//计算两种商品的累加总价
+		
+		System.out.print("请输入香奈儿东方屏风香水的单价: ");
+		price = input.nextFloat();
+		System.out.print("请输入商品的数量: ");
+		count = input.nextInt();
+		total += price * count;	//计算三种商品的累加总价
+		
+		if (total >= 50000) {
+			total *= 0.7;	//total = total * 0.7;
+			System.out.println("打7折！！！");
+		}
+		else {
+			total *= 0.9; 
+			System.out.println("打9折！！！");
+		}
+		System.out.printf("最终应支付的金额为: %.2f",total);
+	}
+
+}
+
+/*class Test{
+	public static void main(String[] args) {
+		
+		double price1, price2,price3;
+		int count1, count2, count3;
+		double total,total1, total2, total3;
+		
+		Scanner input = new Scanner(System.in);
+		
+		System.out.print("请输入路易斯威登中号手表的单价：");
+		price1 = input.nextDouble();
+		System.out.print("请输入商品的数量: ");
+		count1 = input.nextInt();
+		total1 = price1 * count1;
+		
+		System.out.print("请输入爱马仕时尚休闲皮带的单价: ");
+		price2 = input.nextDouble();
+		System.out.print("请输入商品的数量: ");
+		count2 = input.nextInt();
+		total2 = price2 * count2;	
+		
+		System.out.print("请输入香奈儿东方屏风香水的单价: ");
+		price3 = input.nextDouble();
+		System.out.print("请输入商品的数量: ");
+		count3 = input.nextInt();
+		total3 = price3 * count3;
+		
+		total = total1 + total2 + total3;
+		
+		if (total1 > 50000 && total2 > 50000 && total3 > 50000 || total > 35000) {
+			total *= 0.3;	//total = total * 0.7;
+			System.out.println("打3折！！！");
+		}
+		else {
+			total *= 0.8;
+			System.out.println("打8折！！！");
+		}
+		System.out.printf("最终应支付的金额为: %.2f",total);
+	}
+}*/
