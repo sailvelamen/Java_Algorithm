@@ -1,0 +1,41 @@
+public class Poker {
+	public static void main(String[] arrgs){
+		
+	final int N = 52;
+	int[] cards = new int[N];
+	String[] cardColors = {"黑桃","红心","方块","梅花"};
+	String[] cardValues = {"A","2","3","4","5","6","7","8","9","10","J","Q","K"};
+	for (int i = 0; i < cards.length; i++) {
+		cards[i] = i;//初始化
+	}
+		
+	System.out.println("洗牌前：");
+	for(int i = 0;i < cards.length;i++){
+		System.out.printf("%s-%s",cardColors[cards[i] / 13],cardValues[cards[i] % 13]);
+		if((i + 1) % 13 == 0){
+			System.out.println();
+		}else{
+			System.out.print("\t");//
+			}
+		}
+		
+	for (int i = 0; i < cards.length; i++) {
+		int newIndex = (int)(Math.random() * N);//随机数
+		int temp = cards[i];
+		cards[i] = cards[newIndex];    ///！！！！！！！！
+		cards[newIndex] = temp;//交换了牌的位置
+		}
+		
+	System.out.println("洗牌后：");
+	for(int i = 0;i < cards.length;i++){
+		System.out.printf("%s-%s",cardColors[cards[i] / 13],cardValues[cards[i] % 13]);
+									//牌面									花色
+		if((i + 1) % 13 == 0){
+			System.out.println();
+		}else{
+			System.out.print("\t");
+		}
+	}
+		
+	}
+}
