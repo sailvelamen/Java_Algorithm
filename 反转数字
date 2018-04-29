@@ -1,0 +1,28 @@
+public class Test {
+    public static void main(String[] args) {
+
+            int value, right_num;
+            value = 0;
+
+            do {
+
+                Scanner input = new Scanner(System.in);
+                System.out.printf("\n请输入一个数：");
+                value = input.nextInt();
+
+                if (value <= 0)
+                    System.out.printf("必须为正数");
+            } while (value <= 0);
+
+            System.out.printf("反转的数字为：");
+
+            do {
+                right_num = value % 10;
+                System.out.printf("%d", right_num);
+                value = value / 10;
+
+            } while (value != 0);
+
+            System.out.println();
+    }
+}
